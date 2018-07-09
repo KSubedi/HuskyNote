@@ -1,6 +1,6 @@
 <div class="categories-container">
     <div class="cat-body">
-        <div class="category" *ngFor="let category of categories" [ngClass]="category.color">
+        <div class="category" *ngFor="let category of categories" [ngClass]="category.color" (click)="changeCategory(category)">
             <div class="name">{{category.Name}}</div>
             <div class="description">{{category.Description}}</div>
         </div>

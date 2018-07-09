@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Category } from '../../../models/category';
 import { ApiService } from '../../../services/api.service';
 import { NotificationService } from '../../../services/notification.service';
+import { StateService } from '../../../services/state.service';
+import { ModalService } from '../../../services/modal.service';
 
 @Component({
     selector: 'app-change-category',
@@ -13,7 +15,9 @@ export class ChangeCategoryComponent implements OnInit {
     categories: Array<Category> = [];
 
     constructor(public apiService: ApiService,
-                public notificationService: NotificationService) {
+                public notificationService: NotificationService,
+                public stateService: StateService,
+                public modalService: ModalService) {
     }
 
     ngOnInit() {
@@ -26,6 +30,12 @@ export class ChangeCategoryComponent implements OnInit {
                 Type: "error"
             });
         });
+    }
+
+    changeCategory(cat: Category){
+        this.stateService.currentCategory = cat;
+        this.modalService.close();
+        this.apiService.pushUpdates();
     }
 
 }

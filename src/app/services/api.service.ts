@@ -25,12 +25,19 @@ export class ApiService {
     }
 
     // Get all notebooks
-    public getNotes(): Observable<Notebook[]> {
+    public getNotes(category: Category): Observable<Notebook[]> {
         // Get the notes from storage
         let storageResponse = this.storage.get(this.T_NOTEBOOK);
 
         // Get the notebooks
         let notebooks: Array<Notebook> = storageResponse.Data;
+
+        // Filter by category
+        if(category.Id !== "0"){
+            notebooks = notebooks.filter(notebook => {
+                notebook.Category === category;
+            });
+        }
 
         // If the notebooks are empty and there is no error,
         // return empty array
@@ -64,6 +71,13 @@ export class ApiService {
         if(categories === null && !storageResponse.Error){
             categories = [];
         }
+
+        categories.push({
+            Name: "All",
+            Id: "0",
+            Color: "blue",
+            Description: ""
+        });
 
         // Return observable with data
         return new Observable<Category[]>(subscriber => {

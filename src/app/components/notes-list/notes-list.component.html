@@ -1,6 +1,6 @@
 <div class="top-viewport">
     <div class="category-container" (click)="openCategoryChooser()">
-        <p>Category: All Notebooks</p>
+        <p>Category: {{this.stateService.currentCategory.Name}}</p>
     </div>
     <div class="search-container">
         <input type="text" class="form-control search-input" placeholder="Search">

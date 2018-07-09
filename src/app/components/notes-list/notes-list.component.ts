@@ -2,10 +2,10 @@ import { ApiService } from '../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingService } from '../../services/loading.service';
 import { Notebook } from '../../models/notebook';
-import { ActivatedRoute } from '@angular/router';
 import { ModalService } from '../../services/modal.service';
 import { ChangeCategoryComponent } from '../dialogs/change-category/change-category.component';
 import { NotificationService } from '../../services/notification.service';
+import { StateService } from '../../services/state.service';
 
 @Component({
     selector: 'app-notes-list',
@@ -16,7 +16,7 @@ export class NotesListComponent implements OnInit {
 
     constructor(private apiService: ApiService,
         private loadingService: LoadingService,
-        private route: ActivatedRoute,
+        private stateService: StateService,
         private modalService: ModalService,
         private notificationService: NotificationService) { }
 
@@ -35,7 +35,7 @@ export class NotesListComponent implements OnInit {
         this.loadingService.set("", false);
 
         // Get the notes and assign them
-        this.apiService.getNotes()
+        this.apiService.getNotes(this.stateService.currentCategory)
             .subscribe((notebooks: Notebook[]) => {
                 // Set the data
                 this.loadingService.unset();
