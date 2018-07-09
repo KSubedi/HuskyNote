@@ -15,6 +15,7 @@ export class ToolBarComponent implements OnInit {
     ngOnInit() {
     }
 
+    // Opens appropriate modals based on 
     openModal(name: string){
         switch(name){
             case "add-note":
