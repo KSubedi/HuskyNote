@@ -1,0 +1,21 @@
+<div class="toolbar">
+
+    <button (click)="openModal('add-new')" class="btn btn-success toolbar-button">
+        <i class="fas fa-plus"></i>
+        <p>Add New</p>
+    </button>
+    
+    <button routerLink="notes" class="btn btn-primary toolbar-button">
+        <i class="fas fa-book"></i>
+        <p>Notebooks</p>
+    </button>
+
+    <button routerLink="recycle-bin" class="btn btn-danger toolbar-button">
+        <i class="fas fa-trash"></i>
+        <p>Recycle Bin</p>
+    </button>
+    <button routerLink="settings" class="btn btn-secondary toolbar-button right">
+        <i class="fas fa-cog"></i>
+        <p>Settings</p>
+    </button>
+</div>

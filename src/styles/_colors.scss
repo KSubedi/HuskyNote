@@ -1,0 +1,13 @@
+@import '~styles/_functions';
+
+$primary-color: #fdfdfd;
+
+// Calculate most colors based on the primary color
+$background-color: rgb(209, 209, 209);
+$title-bar-background-color: darken($primary-color, 3%);
+$tool-bar-background-color: darken($primary-color, 8%);
+$container-background-color: $primary-color;
+
+$title-bar-text-color: get_foreground($primary-color);
+$tool-bar-text-color: white;
+$container-text-color: get_foreground($primary-color);

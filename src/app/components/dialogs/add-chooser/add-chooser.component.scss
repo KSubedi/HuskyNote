@@ -1,0 +1,32 @@
+.holder{
+    padding: 5px;
+    display: flex;
+    flex-flow: row;
+    
+    .option{
+        background-color: rgb(231, 231, 231);
+        flex-grow: 1;
+        margin: 5px;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: background-color 1s ease;
+        cursor: pointer;
+
+        i{
+            font-size: 5em;
+        }
+
+        p{
+            margin-top: 20px;
+            margin-bottom: 0px;
+            font-size: 1em;
+            font-weight: 300;
+        }
+    }
+
+    .option:hover{
+        background-color: rgb(245, 245, 245);
+        transition: background-color 1s ease;
+    }
+}

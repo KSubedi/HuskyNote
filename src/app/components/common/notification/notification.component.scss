@@ -1,0 +1,91 @@
+@import '~styles/_global';
+
+.notification-container {
+    position: absolute;
+    top     : 20px;
+    right   : 20px;
+    width   : 320px;
+    z-index : 10000;
+
+    @media (max-width : $media-mobile) {
+        width: 100%;
+        top: 0px;
+        right: 0px;
+        padding: 20px;
+    }
+
+    .notification {
+        border-radius   : 5px;
+        padding         : 20px;
+        margin-top      : 20px;
+        color           : white;
+        background-color: rgb(56, 56, 56);
+        box-shadow      : 0px 0px 5px 0px rgb(26, 26, 26);
+        cursor          : pointer;
+        transition      : all 0.3s ease;
+        opacity         : 0.9;
+        display         : flex;
+        flex-direction  : row;
+        position        : relative;
+
+        @media (max-width : $media-mobile) {
+            
+        }
+
+        .close-button{
+            position: absolute;
+            top     : 5px;
+            right   : 5px;
+            width   : 15px;
+            
+        }
+
+        .close-button:hover{
+            color: rgb(216, 216, 216);
+        }
+        .content {
+            flex-grow: 1;
+            .title {
+                font-size  : 1.1em;
+                font-weight: 700;
+            }
+            .body {
+                font-weight: 300;
+            }
+        }
+        .icon {
+            padding       : 5px;
+            display       : flex;
+            flex-direction: column;
+            .padding {
+                flex-grow: 1;
+            }
+            i {
+                font-size: 3em;
+            }
+        }
+    }
+    .notification:hover {
+        background-color: rgb(77, 77, 77);
+        box-shadow      : 0px 0px 10px 2px rgb(26, 26, 26);
+        transition      : all 0.3s ease;
+    }
+    .error {
+        color           : rgb(255, 255, 255);
+        background-color: rgb(255, 44, 44);
+        box-shadow      : 0px 0px 5px 0px rgb(255, 46, 46);
+    }
+    .error:hover {
+        background-color: rgb(255, 84, 84);
+        box-shadow      : 0px 0px 10px 0px rgb(199, 0, 0);
+    }
+    .success {
+        color           : rgb(255, 255, 255);
+        background-color: rgb(99, 201, 48);
+        box-shadow      : 0px 0px 5px 0px rgb(87, 182, 40);
+    }
+    .success:hover {
+        background-color: rgb(117, 184, 88);
+        box-shadow      : 0px 0px 10px 0px rgb(44, 116, 8);
+    }
+}

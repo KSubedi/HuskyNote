@@ -1,0 +1,50 @@
+@import '~styles/_global';
+
+.toolbar{
+    width: 100%;
+    background-color: $tool-bar-background-color;
+    padding: 10px;
+    color: $tool-bar-text-color;
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width : $media-mobile) {
+        height: auto;
+    }
+
+    .dropdown-item{
+        cursor: pointer;
+    }
+
+    .toolbar-button{
+        margin-left: 3px;
+        margin-right: 3px;
+
+        @media (max-width : $media-mobile) {
+            width: 52px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        span{
+            @media (max-width : $media-mobile) {
+                font-size: 1em;
+            }
+        }
+
+        p{
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
+            padding-left: 5px;
+
+            @media (max-width : $media-mobile) {
+                display:  none;
+            }
+        }
+    }
+    
+    .toolbar-button.right{
+        margin-left: auto;
+    }
+}

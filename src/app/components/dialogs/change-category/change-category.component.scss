@@ -1,0 +1,89 @@
+.categories-container{
+    .cat-body{
+        padding-left : 10px;
+        padding-right: 10px;
+        max-height   : 500px;
+        overflow-y   : auto;
+
+        .category{
+            margin-top      : 15px;
+            margin-bottom   : 15px;
+            background-color: rgb(240, 240, 240);
+            color           : rgb(92, 92, 92);
+            border-left     : 5px solid #007bff;
+            border-right    : 5px solid #007bff;
+            padding         : 20px;
+            border-radius   : 5px;
+            text-align      : center;
+            transition      : 0.5s ease;
+            cursor          : pointer;
+
+            .name{
+                font-weight: 500;
+            }
+
+            .description{
+                font-size: 0.9em;
+            }
+        }
+
+        
+        .category:hover{
+            background-color: rgb(214, 214, 214);
+            border-left     : 5px solid #419dff;
+            border-right    : 5px solid #419dff;
+            transition      : 0.5s ease;
+        }
+
+
+        .category.blue{
+            border-left : 5px solid #007bff;
+            border-right: 5px solid #007bff;
+        }
+
+        .category.blue:hover{
+            border-left : 5px solid #007bff;
+            border-right: 5px solid #007bff;
+        }
+
+        .category.red{
+            border-left : 5px solid #ff2c2c;
+            border-right: 5px solid #ff2c2c;
+        }
+
+        .category.red:hover{
+            border-left : 5px solid #ff0000;
+            border-right: 5px solid #ff0000;
+        }
+
+        .category.orange{
+            border-left : 5px solid #ff8119;
+            border-right: 5px solid #ff8119;
+        }
+
+        .category.orange:hover{
+            border-left : 5px solid #ff7300;
+            border-right: 5px solid #ff7300;
+        }
+
+        .category.green{
+            border-left : 5px solid #38ff26;
+            border-right: 5px solid #38ff26;
+        }
+
+        .category.green:hover{
+            border-left : 5px solid #12a005;
+            border-right: 5px solid #12a005;
+        }
+
+        .category.yellow{
+            border-left : 5px solid #fbff1b;
+            border-right: 5px solid #fbff1b;
+        }
+
+        .category.yellow:hover{
+            border-left : 5px solid #eeea00;
+            border-right: 5px solid #eeea00;
+        }
+    }
+}

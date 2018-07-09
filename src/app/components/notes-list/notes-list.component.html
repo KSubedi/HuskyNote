@@ -1,0 +1,34 @@
+<div class="top-viewport">
+    <div class="category-container" (click)="openCategoryChooser()">
+        <p>Category: All Notebooks</p>
+    </div>
+    <div class="search-container">
+        <input type="text" class="form-control search-input" placeholder="Search">
+    </div>
+</div>
+
+
+<div class="bottom-viewport">
+    <div class="notebook-container" *ngIf="notebooks !== undefined && notebooks.length > 0">
+        <div class="notebook" *ngFor="let notebook of notebooks">
+            <div class="icon-holder">
+                <div class="empty"></div>
+                <div class="icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="empty"></div>
+            </div>
+            <div class="info-holder">
+                <div class="empty"></div>
+                <div class="name">{{notebook.Name}}</div>
+                <div class="description">{{notebook.Description}}</div>
+                <div class="empty"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message for no notebooks -->
+    <div class="notebook-empty-message" *ngIf="notebooks === undefined || notebooks.length === 0">
+        No Notebooks Found!
+    </div>
+</div>

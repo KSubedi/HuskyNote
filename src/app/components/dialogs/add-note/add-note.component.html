@@ -1,0 +1,18 @@
+<form>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="My Task List" [(ngModel)]="formData.Name">
+    </div>
+    <div class="form-group">
+        <label for="name">Description</label>
+        <textarea type="text" class="form-control" id="name" name="name" placeholder="Description" [(ngModel)]="formData.Description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select name="category" id="category" class="form-control" [(ngModel)]="formData.Category" [ngClass]="currentCategoryColor" (change)="categoryChanged()">
+            <option value="default">No Category</option>
+            <option *ngFor="let category of categories" [value]="category.Name">{{category.Name}}</option>
+        </select>
+    </div>
+    <div class="btn btn-primary btn-block" (click)="submit()">Submit</div>
+</form>

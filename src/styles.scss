@@ -1,0 +1,13 @@
+@import '~styles/_global';
+
+
+/* You can add global styles to this file, and also import other style files */
+html,body{
+    height: 100%;
+    widows: 100%;
+}
+
+body{
+    background-color: $background-color;
+    font-family: 'Catamaran', sans-serif;
+}

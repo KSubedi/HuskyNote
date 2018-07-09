@@ -1,0 +1,14 @@
+<div class="dialog-wrapper" appDialog>
+    <div #mainDialog class="dialog">
+    
+        <div class="title">
+            {{this.modalService.title}}
+            <span class="close-button" (click)="this.modalService.close()">x</span>
+        </div>
+        <!-- <div class="body" [innerHTML]="this.modalService.template"> -->
+        <div class="body">
+            <!-- Content Goes Here -->
+            <ng-template modalHost></ng-template>
+        </div>
+    </div>
+</div>

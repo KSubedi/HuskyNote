@@ -1,0 +1,8 @@
+@function get_foreground($color) {
+    @if (lightness($color) > 50) {
+      @return #757575; // Lighter backgorund, return dark color
+    } @else {
+      @return #ffffff; // Darker background, return light color
+    }
+  }
+  

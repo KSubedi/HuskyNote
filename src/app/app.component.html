@@ -1,0 +1,28 @@
+ <!-- Modal -->
+ <app-modal *ngIf="this.modalService.isShowing"></app-modal>
+ <app-notification></app-notification>
+
+
+<div class="page-container">
+    <div class="window" [ngClass]="{'fullscreen': this.stateService.isFullScreen}">
+
+        <app-title-bar class="title-bar"></app-title-bar>
+        <app-tool-bar class="tool-bar"></app-tool-bar>
+
+
+        <div class="main-container">
+            <!-- Show loading message if the service is showing loading message. -->
+            <div class="loading" *ngIf="loadingService.showMessage && loadingService.isLoading">
+                <div class="text-center">
+                    <app-loading-indicator></app-loading-indicator>
+                    {{loadingService.message}}
+                </div>
+            </div>
+
+            <!-- Router Outlet -->
+            <router-outlet></router-outlet>
+        </div>
+
+
+    </div>
+</div>

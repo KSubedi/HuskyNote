@@ -1,0 +1,17 @@
+<div class="titlebar" [ngClass]="{'fullscreen': this.stateService.isFullScreen}">
+    <div class="loading" *ngIf="loadingService.isLoading">
+        <app-loading-indicator></app-loading-indicator>
+    </div>
+    <p class="title">Husky Notes</p>
+	<div class="right-container">
+		<a class="greeting" href="#">
+            Hello Kaushal!
+        </a>
+        <div class="titlebar-button fullscreen-button" title="Full Screen" (click)="this.stateService.toggleFullScreen()">
+			<i class="fas fa-expand-arrows-alt"></i>
+		</div>
+		<div class="titlebar-button logout-button" title="Logout">
+			<i class="fas fa-sign-out-alt"></i>
+        </div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<div class="notification-container">
+    <div class="notification"
+    *ngFor="let notification of notificationService.notifications"
+    [ngClass]="{'success':notification.Type === 'success', 'error':notification.Type === 'error'}">
+        <div class="close-button" (click)="notificationService.close(notification)">x</div>
+        <div class="content">
+            <div class="title">{{notification.Title}}</div>
+            <div class="body">{{notification.Body}}</div>
+        </div>
+        <div class="icon">
+            <div class="padding"></div>
+            <i class="far fa-bell"></i>
+            <div class="padding"></div>
+        </div>
+    </div>
+</div>
