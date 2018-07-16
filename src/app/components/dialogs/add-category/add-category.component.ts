@@ -41,7 +41,6 @@ export class AddCategoryComponent implements OnInit {
                 Type: "success"
             })
         }, error => {
-            console.log(error);
             error.error.messages.forEach(message => {
                 this.notificationService.add({
                     Title: "Failed To Add Category",
