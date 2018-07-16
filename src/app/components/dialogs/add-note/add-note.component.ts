@@ -41,7 +41,7 @@ export class AddNoteComponent implements OnInit {
     // Default model 
     formData: Notebook = {
         Name       : "",
-        Category   : "default",
+        Category   : undefined,
         Description: ""
     }
 
@@ -77,8 +77,9 @@ export class AddNoteComponent implements OnInit {
 
     // Updates the highlight color for category chooser on change
     categoryChanged(){
+        console.log(this.formData.Category);
         let catColor = this.categories.filter(cat => {
-            return this.formData.Category === cat.Name
+            return this.formData.Category === cat
         });
 
         
