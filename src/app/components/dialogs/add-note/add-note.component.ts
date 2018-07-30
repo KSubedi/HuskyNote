@@ -14,8 +14,8 @@ import { Category } from '../../../models/category';
 })
 export class AddNoteComponent implements OnInit {
 
-    categories: Array<Category> = [];
-    currentCategoryColor: string = "";
+    categories          : Array<Category> = [];
+    currentCategoryColor: string          = "";
 
     constructor(private apiService: ApiService,
         private loadingService     : LoadingService,
@@ -40,9 +40,11 @@ export class AddNoteComponent implements OnInit {
 
     // Default model 
     formData: Notebook = {
-        Name       : "",
-        Category   : undefined,
-        Description: ""
+        Name            : "",
+        Description     : "",
+        Color           : "",
+        CreatedDate     : null,
+        LastModifiedDate: null
     }
 
     submit() {
@@ -76,13 +78,13 @@ export class AddNoteComponent implements OnInit {
     }
 
     // Updates the highlight color for category chooser on change
-    categoryChanged(){
+    categoryChanged() {
         console.log(this.formData.Category);
         let catColor = this.categories.filter(cat => {
             return this.formData.Category === cat
         });
 
-        
+
         this.currentCategoryColor = catColor[0].Color;
     }
 
