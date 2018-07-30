@@ -1,8 +1,12 @@
-export class Category{
-    Id: string;
+import { ICategory } from "../adapters/app-db";
+
+
+export class Category implements ICategory{
+    Id?: Number;
     Name: string;
     Color: string;
     Description?: string;
-    // TODO: Not being used.
-    Parent?: string;
+    Parent?: ICategory;
+    CreatedDate: Date;
+    LastModifiedDate: Date;
 }
