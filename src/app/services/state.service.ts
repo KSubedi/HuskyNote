@@ -12,7 +12,7 @@ export class StateService {
 
     constructor() {
         this.currentCategory = new Category();
-        this.currentCategory.Id = "0";
+        this.currentCategory.Id = 0;
         this.currentCategory.Name = "All";
         this.currentCategory.Color = "blue";
     }
