@@ -5,7 +5,7 @@ import { Notebook } from '../models/notebook';
 import { Observable, BehaviorSubject, observable } from 'rxjs';
 import { Category } from '../models/category';
 import { LocalStorageAdapter } from '../adapters/local';
-import AppDb from '../adapters/app-db';
+import { AppDb } from '../adapters/app-db';
 
 @Injectable()
 export class ApiService {
@@ -23,6 +23,8 @@ export class ApiService {
     constructor(private http: HttpClient) {
         // This will update te listeners when there are changes 
         this.updateStream$ = new BehaviorSubject<boolean>(null);
+
+        this.db = new AppDb();
     }
 
     // Get all notebooks
@@ -32,6 +34,9 @@ export class ApiService {
 
             this.db.Notebooks.toArray().then((categories) => {
                 subscriber.next(categories);
+                subscriber.complete();
+            }).catch(error => {
+                subscriber.error(error);
                 subscriber.complete();
             });
 
