@@ -1,16 +1,21 @@
-import { Dexie } from "dexie";
+import Dexie from 'dexie';
+import { Notebook } from "../models/notebook";
+import { Category } from "../models/category";
 
-export default class AppDb extends Dexie {
+export class AppDb extends Dexie {
     Notebooks: Dexie.Table<INotebook, Number>;
     Categories: Dexie.Table<ICategory, Number>;
 
     constructor(){
-        super("AppDb");
+        super("HuskyAppDb");
 
         this.version(1).stores({
             Notebooks: "++Id, Name, Color, Description, Category, CreatedDate, LastModifiedDate",
             Categories: "++Id, Name, Color, Description, Parent, CreatedDate, LastModifiedDate"
         });
+
+        this.Notebooks.mapToClass(Notebook);
+        this.Categories.mapToClass(Category);
     }
 }
 
