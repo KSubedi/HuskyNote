@@ -41,12 +41,11 @@ export class NotesListComponent implements OnInit {
                 this.loadingService.unset();
                 this.notebooks = notebooks;
             }, error => {
-                error.error.messages.forEach(message => {
-                    this.notificationService.add({
-                        Title: "Failed To Load Notebooks",
-                        Body: message,
-                        Type: "error" 
-                    });
+                console.log(error);
+                this.notificationService.add({
+                    Title: "Failed To Load Notebooks",
+                    Body: error,
+                    Type: "error" 
                 });
                 this.loadingService.unset();
             });
